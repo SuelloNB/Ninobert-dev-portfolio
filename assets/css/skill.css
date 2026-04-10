@@ -1,0 +1,38 @@
+.skill-section{
+    margin: 0 auto;
+    padding: 1rem;
+    min-height: 100vh;
+    scroll-margin-top: 90px;
+}
+
+.skill-section h1{
+    text-align: center;
+    font-size: var(--headings);
+    margin: 50px;
+}
+
+.skill-section ul{
+    font-size: var(--lists);
+    width: min(100%, 960px);
+    display: grid;
+    margin: 1.5rem auto 0px;
+    gap: 1rem;
+    padding: 0px;
+}
+
+.skill-section li{
+    text-align: center;
+    font-size: var(--lists);
+    list-style: none;
+    background: var(--pure-black);
+    padding: 1rem 1.25rem;
+    border-radius: 14px;
+    border: 1px solid var(--light-gray);
+}
+
+.skill-list{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+

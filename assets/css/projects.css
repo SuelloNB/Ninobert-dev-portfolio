@@ -1,0 +1,86 @@
+.project-section {
+    margin: 0 auto;
+    padding: 3rem 4rem;
+    scroll-margin-top: 90px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-section h1 {
+    text-align: center;
+    font-size: var(--headings);
+    margin-bottom: 3rem;
+}
+
+.project-card {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.project-image {
+    flex: 0 0 700px;
+    height: 750px;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+}
+
+.project-content {
+    flex: 1;
+    max-width: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-content h2 {
+    font-size: var(--sub-headings-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.project-content h3 {
+    font-size: var(--sub-headings-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.project-btn {
+    margin-bottom: 2rem;
+}
+
+.project-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-list li {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 1.2rem;
+    font-size: var(--lists);
+}
+
+.project-list li::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
