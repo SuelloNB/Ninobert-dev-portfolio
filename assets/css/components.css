@@ -36,15 +36,32 @@
     padding: 14px 16px;
     text-decoration: none;
     color: var(--soft-white);
+    position: relative;
+    display: inline-block;
 }
 
 .header img{
     position: absolute;
-    left: 150px;
+    left: 50px;
     top: 50%;
     height: 50px;
     width: 50px;
     transform: translateY(-50%);
     border-radius: 50%;
     object-fit: cover;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 16px;
+    bottom: 8px;
+    width: 0;
+    height: 2px;
+    background-color: var(--soft-white);
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: calc(100% - 32px);
 }
