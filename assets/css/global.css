@@ -1,0 +1,6 @@
+body {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--soft-white);
+}

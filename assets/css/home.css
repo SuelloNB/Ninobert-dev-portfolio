@@ -1,0 +1,16 @@
+.hero{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 10rem auto;
+    padding: 1.5rem;
+    width: 60%;
+}
+
+
+.hero img{
+    height: 500px;
+    width: 500px;
+    margin-right: 30px;
+    border-radius: 20%;
+}
