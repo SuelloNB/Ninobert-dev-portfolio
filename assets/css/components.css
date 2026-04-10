@@ -1,7 +1,9 @@
 .header{
-    position: relative;
+    position: sticky;
     width: 100%;
     height: 70px;
+    top: 0;
+    background-color: var(--pure-black);
 }
 
 .navbar{
