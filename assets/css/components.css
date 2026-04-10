@@ -41,6 +41,7 @@
     object-fit: cover;
 }
 
+/*Navbar hover*/
 .navbar a::after {
     content: "";
     position: absolute;
@@ -75,8 +76,8 @@
 }
 
 .btn-icon {
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -99,10 +100,10 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 0.85rem 1.15rem;
+    padding: 2rem 4rem;
     border-radius: 999px;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: var(--buttons);
     transition: transform 0.25s ease, 
                 box-shadow 0.25s ease, 
                 background-color 0.25s ease, 

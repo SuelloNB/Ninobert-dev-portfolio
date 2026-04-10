@@ -12,5 +12,14 @@
     --dark-bg: #000000;
     --light-bg: #ffffff;
 
-    
+    /*Fonts for Name, Sections, sub-headings, paragraphs,buttons*/
+    --headings: 70px;
+    --sub-headings-primary: 35px;
+    --sub-headings-secondary: 25px;
+    --paragraphs: 20px;
+    --lists: 22px;
+    --buttons: 20px;
+
+    /*Width*/
+    --max-width: 1200px;
 }
