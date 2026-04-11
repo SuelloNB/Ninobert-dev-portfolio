@@ -1,0 +1,47 @@
+.education-section {
+    margin: 0 auto;
+    padding: 1rem;
+    scroll-margin-top: 90px;
+    min-height: 100vh;
+}
+
+.education-section h1{
+    font-size: var(--headings);
+    text-align: center;
+    margin: 50px;
+}
+
+.school-img img{
+    width: 1000px;
+    height: 600px;
+    border-radius: 50px;
+}
+
+.education-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.education-details{
+    margin: 50px;
+    text-align: justify;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.education-details h2{
+    font-size: var(--sub-headings-primary);
+}
+
+.education-details h3{
+    font-size: var(--sub-headings-secondary);
+}
+
+.education-details p{
+    font-size: var(--paragraphs);
+}
