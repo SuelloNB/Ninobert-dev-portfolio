@@ -1,11 +1,10 @@
-body {
-    display: block;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--soft-white);
-}
-
-html {
+html{
     scroll-behavior: smooth;
 }
 
+body{
+    background-color: var(--pure-black);
+    color: var(--soft-white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}

@@ -101,28 +101,130 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="project-section">
-            <h1>Projects</h1>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="./assets/images/projects/uclmways-img.png" alt="Home page of the UCLM Ways">
+        <section class="projects" id="projects">
+            <h1 class="projects__title">Projects</h1>
+        
+            <input type="radio" name="projects-slider" id="project-1" checked>
+            <input type="radio" name="projects-slider" id="project-2">
+            <input type="radio" name="projects-slider" id="project-3">
+        
+            <div class="projects__wrapper">
+                <div class="projects__arrows projects__arrows--1">
+                    <label for="project-3" class="projects__arrow projects__arrow--left">&#8592;</label>
+                    <label for="project-2" class="projects__arrow projects__arrow--right">&#8594;</label>
                 </div>
-                <div class="project-content">
-                    <h2>UCLMWAYS: A CAMPUS NAVIGATION SYSTEM FOR UCLM STUDENTS</h2>
-                    <h3>(RASPBERRY PI 4, OPENLAYERS, NEXT.JS, TOUCHSCREEN INTERFACE)</h3>
-                    <a class="btn btn-primary project-btn" href="https://uclm-openlayersmapping.onrender.com/" target="_blank">VISIT</a>
-                    <ul class="project-list">
-                        <li>
-                            CONTRIBUTED TO THE DEVELOPMENT OF AN INTERACTIVE CAMPUS NAVIGATION SYSTEM THAT HELPS USERS LOCATE BUILDINGS AND FACILITIES WITHIN THE UNIVERSITY.
-                        </li>
-                        <li>
-                            ASSISTED IN IMPLEMENTING A RASPBERRY PI–BASED TOUCHSCREEN KIOSK ALLOWING USERS TO INTERACT WITH THE DIGITAL CAMPUS MAP.
-                        </li>
-                        <li>
-                            SUPPORTED INTEGRATION OF OPENLAYERS MAPPING TECHNOLOGY TO PROVIDE ACCESSIBLE AND USER-FRIENDLY NAVIGATION FOR CAMPUS VISITORS.
-                        </li>
-                    </ul>
+        
+                <div class="projects__arrows projects__arrows--2">
+                    <label for="project-1" class="projects__arrow projects__arrow--left">&#8592;</label>
+                    <label for="project-3" class="projects__arrow projects__arrow--right">&#8594;</label>
                 </div>
+        
+                <div class="projects__arrows projects__arrows--3">
+                    <label for="project-2" class="projects__arrow projects__arrow--left">&#8592;</label>
+                    <label for="project-1" class="projects__arrow projects__arrow--right">&#8594;</label>
+                </div>
+        
+                <div class="projects__viewport">
+                    <div class="projects__track">
+        
+                        <article class="projects__slide">
+                            <div class="project-card">
+                                <div class="project-card__content">
+                                    <div class="project-card__header">
+                                        <div class="project-card__title">
+                                            <h2>UCLMWAYS</h2>
+                                            <h3>Campus Navigation System</h3>
+                                            <p class="project-card__year">2025</p>
+                                        </div>
+        
+                                        <a href="#" class="project-card__button">View Project</a>
+                                    </div>
+        
+                                    <span class="project-card__tag">Featured Project</span>
+                                    <div class="project-card__divider"></div>
+        
+                                    <ul class="project-card__list">
+                                        <li>Developed an interactive campus navigation system for UCLM students.</li>
+                                        <li>Implemented map visualization and routing using OpenLayers.</li>
+                                        <li>Integrated a touchscreen-friendly interface for kiosk-style usage.</li>
+                                        <li>Designed the system for Raspberry Pi deployment and real-time usability.</li>
+                                    </ul>
+                                </div>
+        
+                                <div class="project-card__preview">
+                                    <img src="./assets/images/projects/uclmways-img.png" alt="Preview of UCLMWAYS campus navigation system">
+                                </div>
+                            </div>
+                        </article>
+        
+                        <article class="projects__slide">
+                            <div class="project-card">
+                                <div class="project-card__content">
+                                    <div class="project-card__header">
+                                        <div class="project-card__title">
+                                            <h2>AI Assistive Coding</h2>
+                                            <h3>Web Application</h3>
+                                            <p class="project-card__year">2025</p>
+                                        </div>
+        
+                                        <a href="#" class="project-card__button">View Project</a>
+                                    </div>
+        
+                                    <span class="project-card__tag">Development Project</span>
+                                    <div class="project-card__divider"></div>
+        
+                                    <ul class="project-card__list">
+                                        <li>Built a structured coding support platform with modern frontend architecture.</li>
+                                        <li>Improved maintainability through cleaner component organization.</li>
+                                        <li>Integrated frontend and backend workflow for a smoother user experience.</li>
+                                        <li>Focused on readability, structure, and scalable implementation.</li>
+                                    </ul>
+                                </div>
+        
+                                <div class="project-card__preview">
+                                    <img src="./assets/images/projects/ai-assistive-img.png" alt="Preview of AI Assistive Coding project">
+                                </div>
+                            </div>
+                        </article>
+        
+                        <article class="projects__slide">
+                            <div class="project-card">
+                                <div class="project-card__content">
+                                    <div class="project-card__header">
+                                        <div class="project-card__title">
+                                            <h2>Streetwear E-Commerce</h2>
+                                            <h3>Frontend / UI Design</h3>
+                                            <p class="project-card__year">2025</p>
+                                        </div>
+        
+                                        <a href="#" class="project-card__button">View Project</a>
+                                    </div>
+        
+                                    <span class="project-card__tag">UI / UX Project</span>
+                                    <div class="project-card__divider"></div>
+        
+                                    <ul class="project-card__list">
+                                        <li>Designed a minimal and premium storefront experience for fashion products.</li>
+                                        <li>Improved layout structure, spacing, and visual hierarchy.</li>
+                                        <li>Created a responsive interface for a polished browsing experience.</li>
+                                        <li>Applied a clean monochrome style for a timeless portfolio presentation.</li>
+                                    </ul>
+                                </div>
+        
+                                <div class="project-card__preview">
+                                    <img src="./assets/images/projects/ecommerce-img.png" alt="Preview of streetwear ecommerce project">
+                                </div>
+                            </div>
+                        </article>
+        
+                    </div>
+                </div>
+            </div>
+        
+            <div class="projects__indicators">
+                <label for="project-1"></label>
+                <label for="project-2"></label>
+                <label for="project-3"></label>
             </div>
         </section>
     </main>
