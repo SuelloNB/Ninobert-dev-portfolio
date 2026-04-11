@@ -5,15 +5,13 @@
     padding: 8rem 2rem 5rem;
     background-color: var(--pure-black);
     color: var(--soft-white);
-    scroll-margin-top: 110px;
+    scroll-margin-top: 10px;
 }
 
 .projects__title{
     text-align: center;
-    font-size: clamp(2.8rem, 6vw, 5rem);
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 3rem;
+    font-size: var(--headings);
+    margin: 50px;
 }
 
 .projects__wrapper{
