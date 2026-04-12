@@ -14,7 +14,8 @@
 /* GRID */
 .skill-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(3, 500px);
+    justify-content: center; /* centers the whole grid */
     gap: 2.5rem;
 }
 
