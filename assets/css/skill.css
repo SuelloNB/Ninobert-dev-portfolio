@@ -15,7 +15,7 @@
 .skill-container{
     display: grid;
     grid-template-columns: repeat(3, 500px);
-    justify-content: center; /* centers the whole grid */
+    justify-content: center;
     gap: 2.5rem;
 }
 
