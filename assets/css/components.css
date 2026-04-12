@@ -53,7 +53,8 @@
     transition: width 0.3s ease;
 }
 
-.navbar a:hover::after{
+.navbar a:hover::after,
+.navbar a.active::after{
     width: calc(100% - 32px);
 }
 
