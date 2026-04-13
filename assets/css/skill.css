@@ -3,6 +3,7 @@
     margin: 0 auto;
     padding: 8rem 2rem;
     color: var(--soft-white);
+    min-height: 100vh;
 }
 
 .skill-title{
@@ -14,8 +15,9 @@
 /* GRID */
 .skill-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    grid-template-columns: repeat(3, 520px);
     gap: 2.5rem;
+    justify-content: center;
 }
 
 /* CARD */
