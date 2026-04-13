@@ -20,6 +20,7 @@ export function loadCertificate() {
         <div class="certificate-header">
           <h2 class="certificate-title-text">${cert.title}</h2>
           <p class="certificate-date">${cert.date}</p>
+          <span class="certificate-card-tag">${cert.tag}</span>
         </div>
 
         <!-- HOVER DESCRIPTION -->
