@@ -4,37 +4,33 @@ import { loadSkills } from "../js/pages/skill.js";
 import { loadCertificate } from "../js/pages/certificate.js";
 
 
-//Initialization
+/* =========================
+   INIT
+========================= */
 document.addEventListener("DOMContentLoaded", () => {
   loadSkills();
   loadCertificate();
+
   initCinematicScroll();
   initSmoothNavigation();
   initActiveNavHighlight();
   initNavbarScrollEffect();
+  initSkillObserver(); // IMPORTANT FIX
+
   initProjects();
 });
 
-//Scroll Animation
-function onReady(callback) {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", callback);
-  } else {
-    callback();
-  }
-}
 
 /* =========================
-   CINEMATIC SCROLL SYSTEM
+   CINEMATIC SCROLL
 ========================= */
 function initCinematicScroll() {
   const elements = document.querySelectorAll(`
     .hero,
     .info,
     .experience,
-    .skill-card,
     .projects,
-    .certificate-section,
+    .certificate-card,
     .education-section
   `);
 
@@ -44,9 +40,7 @@ function initCinematicScroll() {
         entry.target.classList.add("is-visible");
       }
     });
-  }, {
-    threshold: 0.15
-  });
+  }, { threshold: 0.15 });
 
   elements.forEach(el => {
     el.classList.add("reveal");
@@ -55,12 +49,27 @@ function initCinematicScroll() {
 }
 
 /* =========================
-   SMOOTH NAVIGATION
+   SKILL FIX OBSERVER
+========================= */
+function initSkillObserver() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll(".skill-card").forEach(card => {
+    observer.observe(card);
+  });
+}
+
+/* =========================
+   SMOOTH SCROLL NAV
 ========================= */
 function initSmoothNavigation() {
-
   document.querySelectorAll(".navbar a").forEach(link => {
-
     link.addEventListener("click", (e) => {
       e.preventDefault();
 
@@ -72,70 +81,38 @@ function initSmoothNavigation() {
           block: "start"
         });
       }
-
     });
-
   });
-
 }
 
 /* =========================
-   ACTIVE NAV HIGHLIGHT
+   ACTIVE NAV
 ========================= */
 function initActiveNavHighlight() {
-
   const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".navbar a");
+  const links = document.querySelectorAll(".navbar a");
 
   const observer = new IntersectionObserver((entries) => {
-
     entries.forEach(entry => {
-
       if (entry.isIntersecting) {
-
-        const id = entry.target.id;
-
-        navLinks.forEach(link => {
-          link.classList.remove("active");
-
-          if (link.getAttribute("href") === `#${id}`) {
-            link.classList.add("active");
-          }
-        });
-
+        links.forEach(link => link.classList.remove("active"));
+        document
+          .querySelector(`.navbar a[href="#${entry.target.id}"]`)
+          ?.classList.add("active");
       }
-
     });
+  }, { threshold: 0.5 });
 
-  }, {
-    threshold: 0.55
-  });
-
-  sections.forEach(section => observer.observe(section));
-
+  sections.forEach(sec => observer.observe(sec));
 }
 
 /* =========================
-   NAVBAR SCROLL EFFECT
+   NAVBAR EFFECT
 ========================= */
 function initNavbarScrollEffect() {
-
   const header = document.querySelector(".site-header");
 
   window.addEventListener("scroll", () => {
     header.classList.toggle("scrolled", window.scrollY > 20);
   });
-
 }
-
-/* =========================
-   BOOTSTRAP (FIXED)
-========================= */
-onReady(() => {
-
-  initCinematicScroll();
-  initSmoothNavigation();
-  initActiveNavHighlight();
-  initNavbarScrollEffect();
-
-});

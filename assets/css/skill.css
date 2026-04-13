@@ -14,8 +14,7 @@
 /* GRID */
 .skill-container{
     display: grid;
-    grid-template-columns: repeat(3, 500px);
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
     gap: 2.5rem;
 }
 
@@ -88,52 +87,68 @@
 .skill-card-content{
     width: 100%;
     padding: 2rem;
+    text-align: center;
 }
 
 /* TEXT */
-.skill-card-title h2{
+.skill-card-content h2{
     font-size: 2rem;
     font-weight: 600;
 }
 
 .skill-card-tag{
-    font-size: 0.85rem;
-    color: var(--cool-gray);
+    font-size: var(--paragraphs);
+    color: var(--soft-white);
+    display: inline-block;
+    margin: 1rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-/* DETAILS */
-.skill-card-details{
-    max-height: 0;
+/* Overlay hidden by default */
+.skill-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.86);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     opacity: 0;
-    transform: translateY(20px);
-    overflow: hidden;
     transition: all 0.4s ease;
 }
 
-.skill-card:hover .skill-card-details{
-    max-height: 300px;
+/* Show overlay on hover */
+.skill-card:hover .skill-card-overlay {
     opacity: 1;
+}
+
+/* Content animation */
+.skill-card-content {
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+/* Animate content in */
+.skill-card:hover .skill-card-content {
     transform: translateY(0);
 }
 
-.skill-card-divider{
-    height: 1px;
-    background: var(--border-subtle);
-    margin: 1rem 0;
-}
-
-.skill-card-list{
-    padding-left: 1rem;
-}
-
-.skill-card-list li{
-    font-size: var(--lists);
-    color: var(--light-gray);
-    margin-bottom: 0.5rem;
+/* List items animation */
+.skill-card-content li {
+    opacity: 0;
+    transform: translateX(-10px);
     transition: all 0.3s ease;
+    list-style: none;
+    margin: 5px;
+    font-size: var(--lists);
 }
 
-.skill-card:hover .skill-card-list li{
+/* Show list on hover */
+.skill-card:hover .skill-card-content li {
+    opacity: 1;
     transform: translateX(6px);
-    color: var(--soft-white);
 }

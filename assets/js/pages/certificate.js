@@ -24,9 +24,7 @@ export function loadCertificate() {
 
         <!-- HOVER DESCRIPTION -->
         <div class="certificate-description">
-          <ul>
-            ${cert.items.map(item => `<li>${item}</li>`).join("")}
-          </ul>
+          <p>${cert.description}</p>
         </div>
 
         <!-- BUTTON -->
