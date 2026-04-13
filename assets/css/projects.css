@@ -167,10 +167,10 @@
     padding: 0.9rem;
     text-align: center;
     border-radius: 14px;
-    background: white;
-    color: black;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
     text-decoration: none;
-    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 
     opacity: 0;
@@ -180,7 +180,9 @@
 
 .project-card__button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.55);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+    background: white;
+    color: black;
 }
 
 .project-card:hover .project-card__button{
