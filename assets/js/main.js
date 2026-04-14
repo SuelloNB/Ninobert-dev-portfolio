@@ -33,7 +33,9 @@ function initCinematicScroll() {
     .experience,
     .projects,
     .certificate-card,
-    .education-section
+    .education-section,
+    .about-section
+
   `);
 
   const observer = new IntersectionObserver((entries) => {

@@ -11,8 +11,18 @@
     padding: 1.5rem;
     width: 80%;
     min-height: 100vh;
+    opacity: 0;
+    transform: scale(1.06);
+    filter: blur(14px);
+    transition: 1.2s ease;
   }
   
+  .hero.is-visible {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
   .hero img {
     height: 600px;
     width: 600px;
