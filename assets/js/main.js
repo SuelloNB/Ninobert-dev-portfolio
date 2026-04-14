@@ -32,10 +32,16 @@ function initCinematicScroll() {
     .hero,
     .info,
     .experience,
+    .experience-card,
+    .skill-section,
     .projects,
+    .projects__viewer,
+    .certificate-title,
     .certificate-card,
     .education-section,
+    .education-card,
     .about-section,
+    .about-container,
     .about-bottom
   `);
 
