@@ -18,7 +18,6 @@
     align-items: center;
     margin-bottom: 4rem;
     justify-content: center;
-    display: grid;
 }
 
 .about-img img{
@@ -35,10 +34,10 @@
     color: var(--soft-white);
 }
 
-.about-description{
-    font-size: var(--paragraph);
+.about-description p{
+    font-size: var(--paragraphs);
     color: var(--soft-white);
-    margin-top: 12px;
+    margin-top: 20px;
 }
 
 .contact-btn{

@@ -137,10 +137,10 @@
 
 
 .certificate-description p {
-  font-size: 0.9rem;
   opacity: 0.85;
   margin-bottom: 6px;
   padding-left: 1rem;
+  font-size: var(--paragraphs);
 }
 
 /* BUTTON */

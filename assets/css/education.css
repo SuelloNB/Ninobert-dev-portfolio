@@ -5,43 +5,37 @@
     min-height: 100vh;
 }
 
-.education-section h1{
-    font-size: var(--headings);
-    text-align: center;
-    margin: 50px;
-}
-
-.school-img img{
-    width: 1000px;
-    height: 600px;
-    border-radius: 50px;
-}
-
 .education-card{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 720px);
+    gap: 5rem;
     align-items: center;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.education-details{
-    margin: 50px;
-    text-align: justify;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 4rem;
     justify-content: center;
 }
 
-.education-details h2{
+.education-title{
+    text-align: center;
+    font-size: var(--headings);
+    margin: 50px;
+}
+
+.education-img img{
+    border-radius: 20px;
+}
+
+.education-heading{
     font-size: var(--sub-headings-primary);
+    margin-bottom: 5px;
+    font-weight: 700;
 }
 
-.education-details h3{
+.education-sub-heading{
     font-size: var(--sub-headings-secondary);
+    font-weight: 500;
+    margin-bottom: 5px;
 }
 
-.education-details p{
+.education-description{
     font-size: var(--paragraphs);
 }

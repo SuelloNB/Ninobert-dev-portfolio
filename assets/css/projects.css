@@ -158,6 +158,7 @@
     color: rgba(255,255,255,0.88);
     line-height: 1.7;
     text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    font-size: var(--lists);
 }
 
 /* BUTTON */
