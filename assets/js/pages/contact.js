@@ -12,13 +12,13 @@ export function initContactForm() {
       const subject = form.subject.value.trim();
       const message = form.message.value.trim();
   
-      // ✅ Validation
+      //Validation
       if (!name || !email || !message) {
         alert("Please fill all required fields.");
         return;
       }
   
-      // ✅ UI Feedback
+      // UI Feedback
       button.textContent = "Sending...";
       button.disabled = true;
   
