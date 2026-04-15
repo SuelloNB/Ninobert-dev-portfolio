@@ -1,5 +1,5 @@
 import { initProjects } from "../js/pages/projects.js";
-// import { initContactForm } from "./contact.js";
+import { initContactForm } from "../js/pages/contact.js";
 import { loadSkills } from "../js/pages/skill.js";
 import { loadCertificate } from "../js/pages/certificate.js";
 import { loadAbout } from "../js/pages/about.js";
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initNavbarScrollEffect();
   initSkillObserver();
   initSkillBarAnimation();
+  initContactForm();
 
   initProjects();
 });
