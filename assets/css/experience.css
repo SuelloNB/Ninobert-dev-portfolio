@@ -1,76 +1,130 @@
 .experience {
-    margin: 0 auto;
-    padding: 1rem;
-    scroll-margin-top: 90px;
     min-height: 100vh;
+    padding: var(--space-lg) 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.experience h1{
+.experience h1 {
     text-align: center;
-    font-size: var(--headings);
-    margin: 50px;
+    font-size: var(--fs-h1);
+    margin-bottom: var(--space-lg);
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
-.experience h2{
-    font-size: var(--sub-headings-primary);
+.experience-card {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: 24px;
+    padding: clamp(1.5rem, 5vw, 2.5rem);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.experience h3{
-    font-size: var(--sub-headings-secondary);
+.experience-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
-.experience p{
-    font-size: var(--paragraphs);
-}
-
-.experience li{
-    font-size: var(--lists);
-    line-height: 3.0;
-}
-
-.experience-card{
-    width: 80%;
-    margin: 0 auto;
-    background: var(--dark-bg);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 18px;
-    padding: 2rem;
-}
-
-.experience-header{
+.experience-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.25rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-subtle);
 }
 
-.experience-meta{
-    flex: 1;
-    min-width: 260px;
-}
 
-.experience-date{
-    font-size: 0.95rem;
-    margin-bottom: 0.6rem;
-}
-
-.experience-actions{
-    display: flex;
-    flex-wrap: wrap;
-    align-self: center;
-}
-
-.experience-badge{
-    display: inline-block;
-    padding: 0.4rem 0.8rem;
-    border-radius: 999px;
-    background: var(--charcoal);
-    color: var(--soft-white);
-    font-size: 0.85rem;
+.experience-meta h2 {
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
     font-weight: 700;
+    color: var(--soft-white);
+    margin-bottom: 0.25rem;
 }
 
+.experience-meta h3 {
+    font-size: 1.1rem;
+    color: var(--cool-gray);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.experience-date {
+    font-size: 0.9rem;
+    color: var(--cool-gray);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.experience-badge {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border-radius: 8px; 
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--soft-white);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+
+.experience ul {
+    list-style: none;
+    padding: 0;
+}
+
+.experience ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--light-gray);
+    /* Converting all-caps to normal case for premium readability */
+    text-transform: none; 
+}
+
+
+.experience ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--cool-gray);
+}
+
+/* =========================
+   RESPONSIVENESS
+========================= */
+
+@media (max-width: 768px) {
+    .experience-header {
+        flex-direction: column; /* Stack vertically on mobile */
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .experience-actions {
+        width: 100%;
+    }
+
+    .experience-actions .btn {
+        width: 100%; /* Full width button for better mobile UX */
+        justify-content: center;
+    }
+    
+    .experience-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Desktop Polish */
+@media (min-width: 1024px) {
+    .experience-actions {
+        align-self: flex-start; /* Keep button aligned with text top */
+    }
+}
