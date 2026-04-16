@@ -140,13 +140,14 @@
 }
 
 .btn:hover{
+    background-color: var(--soft-white);
     box-shadow: var(--shadow-light);
     transform: translateY(-3px);
 }
 
 .btn-primary:hover{
     border-color: var(--light-gray);
-    color: var(--soft-white);
+    color: var(--pure-black);
 }
 
 
