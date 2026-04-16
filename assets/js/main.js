@@ -223,3 +223,26 @@ function initFooterReveal() {
 
   if (footer) observer.observe(footer);
 }
+
+// Theme Toggle Logic
+const themeToggleBtn = document.getElementById('themeToggle');
+const body = document.body;
+
+// Check for saved user preference, else use system preference
+const savedTheme = localStorage.getItem('portfolio-theme');
+const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
+    body.classList.add('light-mode');
+}
+
+themeToggleBtn.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+    
+    // Save preference to local storage
+    if (body.classList.contains('light-mode')) {
+        localStorage.setItem('portfolio-theme', 'light');
+    } else {
+        localStorage.setItem('portfolio-theme', 'dark');
+    }
+});
