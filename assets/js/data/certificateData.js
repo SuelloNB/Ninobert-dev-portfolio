@@ -44,7 +44,7 @@ export const certificateData = [
         tag: "CCNA",
         image: "./assets/images/certificates/python-certificate.png",
         date: "December 2024",
-        description: "This credential from Cisco Networking Academy validates my ability to design, debug, and refactor computer programs using Python 3. I mastered algorithmic thinking and the Python Standard Library to resolve technical challenges and implement efficient software processes.",
+        description: "This credential from Cisco Networking Academy validates my ability to design, debug, and refactor computer programs using Python 3.",
         file: "./assets/files/python-certificate.pdf"
       }
 

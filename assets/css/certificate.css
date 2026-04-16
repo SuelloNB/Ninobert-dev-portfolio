@@ -1,179 +1,174 @@
+/* certificate.css */
 .certificate-section {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: auto;
-  padding: 6rem 2rem;
+  padding: var(--space-xl) 0; 
+  overflow: hidden;
+  position: relative;
 }
 
 .certificate-title {
   text-align: center;
-  font-size: var(--headings);
-  margin-bottom: 3rem;
+  font-size: clamp(2rem, 5vw, var(--headings));
+  margin-bottom: var(--space-lg);
 }
 
-/* GRID */
+/* THE TRACK: Focuses on Center */
 .certificate-container {
-  display: grid;
-  grid-template-columns: repeat(3, 520px);
-  gap: 2rem;
-  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  /* This creates the "peek" effect for side cards */
+  padding: 0 10%; 
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
 }
 
-/* CARD */
 .certificate-card {
   position: relative;
-  height: 420px;
-  border-radius: 18px;
+  min-width: 80vw; /* Card takes most of the screen width */
+  height: 500px;
+  border-radius: 24px;
   overflow: hidden;
-  cursor: pointer;
-
-  background: var(--pure-black);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.5s ease;
+  background: #000;
+  border: 1px solid var(--border-subtle);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0.3;
+  transform: scale(0.85);
 }
 
-.certificate-card.is-visible {
+/* Current active card in the middle */
+.certificate-card.is-focused {
   opacity: 1;
-  transform: translateY(0);
+  transform: scale(1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
-.certificate-card:hover{
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: var(--shadow-soft);
-}
-
-
-/* IMAGE */
+/* IMAGE ENHANCEMENT */
 .certificate-img {
   position: absolute;
   inset: 0;
+  z-index: 1;
 }
 
 .certificate-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.75);
-  transition: transform 0.6s ease;
-}
-
-.certificate-card:hover .certificate-img img{
-  transform: scale(1.08);
+  filter: brightness(0.8);
+  transition: transform 1s ease, filter 0.5s ease;
 }
 
 /* OVERLAY */
 .certificate-overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 20px;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.65),
-    rgba(0,0,0,0.25),
-    transparent
-  );
-
-  transition: all 0.4s ease;
-}
-
-
-/*Overlay Hover*/
-.certificate-card:hover .certificate-overlay {
-  background: linear-gradient(
-    to top,
-  rgba(0,0,0,1),  /* slightly darker, not harsh */
-  rgba(0,0,0,0.8),
-    transparent
-  );
-  backdrop-filter: blur(4px);
-}
-
-/* HEADER (ALWAYS VISIBLE) */
-.certificate-header {
-  margin-bottom: 10px;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 70%);
 }
 
 .certificate-title-text {
-  font-size: var(--sub-headings-primary);
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
 }
 
-.certificate-card-tag{
-  font-size: var(--paragraphs);
-  color: var(--soft-white);
-  display: inline-block;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  padding: 0.35rem 0.9rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+.certificate-card-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 1rem;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  width: fit-content;
+  margin-bottom: 10px;
 }
 
-.certificate-date {
-  font-size: var(--paragraphs);
-  opacity: 0.7;
-}
-
-/* DESCRIPTION (HIDDEN UNTIL HOVER) */
-
+/* DESCRIPTION (TAP TO OPEN) */
 .certificate-description {
   max-height: 0;
   opacity: 0;
-  overflow: hidden;
-  transform: translateY(10px);
-  transition: 0.4s ease;
+  transform: translateY(15px);
+  transition: all 0.5s ease;
 }
 
-.certificate-card:hover .certificate-description {
-  max-height: 180px;
+.certificate-btn {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  background: #fff;
+  color: #000;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 1.2rem;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+/* ACTIVE STATE */
+.certificate-card.is-active .certificate-img img {
+  filter: brightness(0.3) blur(8px);
+}
+.certificate-card.is-active .certificate-description {
+  max-height: 200px;
   opacity: 1;
   transform: translateY(0);
-  
+}
+.certificate-card.is-active .certificate-btn {
+  opacity: 1;
 }
 
-
-.certificate-description p {
-  opacity: 0.85;
-  margin-bottom: 6px;
-  padding-left: 1rem;
-  font-size: var(--paragraphs);
+/* INDICATOR BAR - FIXED VISIBILITY */
+.cert-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 3rem;
+  height: 20px;
 }
 
-/* BUTTON */
-.certificate-btn {
-  margin-top: 12px;
-  display: inline-block;
-  padding: 10px 14px;
-  border-radius: 8px;
-  text-align: center;
-
-  background: rgba(255,255,255,0.1);
-  color: white;
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.2);
-
-  /* Hidden state */
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transform: translateY(20px);
-
+.indicator-dot {
+  width: 10px;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
   transition: all 0.4s ease;
 }
 
-/* SHOW when hovering the parent */
-.certificate-card:hover .certificate-btn {
-  max-height: 100px; /* enough to fit button */
-  opacity: 1;
-  transform: translateY(0);
+.indicator-dot.active {
+  width: 30px;
+  background: #fff;
 }
 
-.certificate-btn:hover {
-  background: white;
-  color: black;
+.swipe-hint {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--cool-gray);
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
 
+/* DESKTOP RESET */
+@media (min-width: 1024px) {
+  .certificate-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 var(--space-md);
+    transform: none !important;
+  }
+  .certificate-card {
+    min-width: auto;
+    opacity: 1;
+    transform: scale(1);
+  }
+  .cert-indicators, .swipe-hint { display: none !important; }
+}
